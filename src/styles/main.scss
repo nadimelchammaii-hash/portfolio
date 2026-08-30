@@ -1,0 +1,76 @@
+// Font tokens consumed by src/styles/settings.scss ($heading-font-family,
+// $body-font-family) and by the `.v-code`/code rule below. Actual font
+// files are loaded as @fontsource CSS imports in main.ts.
+:root {
+  --font-heading: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Courier New', monospace;
+}
+
+@layer vuetify-overrides {
+  code, pre, .v-code {
+    font-family: var(--font-mono);
+  }
+
+  // Shared content-width constraint used by the header, footer, and every
+  // page section — mirrors the Stitch design's flat 1200px container token.
+  // Deliberately not using v-container's own responsive max-width scale,
+  // since that scale was tuned for the scaffold's original breakpoints and
+  // doesn't match this single flat cap.
+  .app-container {
+    max-width: 1200px;
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 24px;
+  }
+
+  // The Stitch design leans on JetBrains Mono for labels, tags, and dates
+  // throughout every section — this utility gets reused well beyond the
+  // header/footer built in this phase.
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  // Matches the Stitch spacing tokens: 64px vertical rhythm between
+  // sections on mobile, doubling to 128px at our md breakpoint (840px).
+  .section-spacing {
+    padding-block: 64px;
+  }
+
+  @media (min-width: 840px) {
+    .section-spacing {
+      padding-block: 128px;
+    }
+  }
+
+  // Small pulsing status dot, reused by the "Currently Exploring" header.
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgb(var(--v-theme-tertiary));
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pulse-dot {
+      animation: none;
+    }
+  }
+
+  // Reproduces the Stitch design's subtle "graph paper" background. Uses
+  // Vuetify's --v-theme-* CSS variables (each one an "r, g, b" triplet)
+  // so the pattern automatically re-tints itself for light/dark instead of
+  // needing a separate hardcoded color per theme.
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(var(--v-theme-outlineVariant), 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(var(--v-theme-outlineVariant), 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}

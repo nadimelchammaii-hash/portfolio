@@ -1,0 +1,31 @@
+/**
+ * src/styles/settings.scss
+ *
+ * Configures SASS variables and Vuetify overwrites
+ */
+
+// $utilities is intentionally left at its default (enabled): the original
+// scaffold disabled it because Tailwind was providing spacing/layout utility
+// classes instead. We removed Tailwind, so Vuetify's own `pa-`, `d-flex`,
+// `bg-primary-container`, etc. classes are now the only utility system.
+@use 'vuetify/settings' with (
+  $color-pack: false,
+
+  $heading-font-family: var(--font-heading),
+  $body-font-family: var(--font-body),
+
+  $grid-breakpoints: (
+    'xs': 0,
+    'sm': 600px,
+    'md': 840px,
+    'lg': 1145px,
+    'xl': 1545px,
+    'xxl': 2138px,
+  ),
+  $container-max-widths: (
+    'md': 700px,
+    'lg': 1000px,
+    'xl': 1400px,
+    'xxl': 2000px,
+  ),
+);
