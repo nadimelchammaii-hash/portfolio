@@ -1,14 +1,14 @@
 <template>
   <article class="project-card">
     <!--
-      No real project screenshot exists yet, and a fabricated one would be
-      dishonest. This panel stands in for it with a code-inspired visual
+      No real project screenshots exist yet, and a fabricated one would be
+      dishonest. This panel stands in for one with a code-inspired visual
       instead of a stock/placeholder photo — swap in a real <img> here once
       a screenshot is available, no other markup needs to change.
     -->
     <div class="project-visual grid-bg">
-      <v-icon color="primary" icon="mdi-wallet-outline" size="56" />
-      <p class="project-visual-tag font-mono">$ docker compose up</p>
+      <v-icon color="primary" :icon="project.icon" size="56" />
+      <p class="project-visual-tag font-mono">{{ project.visualTag }}</p>
     </div>
 
     <div class="project-content">

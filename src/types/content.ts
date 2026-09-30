@@ -58,4 +58,8 @@ export interface Project {
   tech: string[]
   links: ProjectLink[]
   variant: 'featured' | 'compact'
+  /** mdi icon shown in the card's visual panel (no real screenshot exists). */
+  icon: string
+  /** Terminal-style tag shown under the icon, e.g. `$ docker compose up`. */
+  visualTag: string
 }

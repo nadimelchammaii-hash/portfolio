@@ -4,10 +4,10 @@
 
     <div class="projects-list">
       <!--
-        Only the 'featured' variant exists today — ProjectCardCompact isn't
-        built yet since there's no second project to feed it. Add it when
-        one exists; this v-if is here so that addition doesn't require
-        touching this section again.
+        Only the 'featured' variant exists today - ProjectCardCompact isn't
+        built yet since nothing uses it (every project so far has been
+        substantial enough to warrant the full card). Add it, and the filter
+        below, when a smaller/secondary project shows up.
       -->
       <ProjectCardFeatured v-for="project in featuredProjects" :key="project.id" :project="project" />
     </div>
