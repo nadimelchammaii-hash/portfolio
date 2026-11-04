@@ -2,6 +2,23 @@ import type { Project } from '@/types/content'
 
 export const projects: Project[] = [
   {
+    id: 'askmydocs',
+    slug: 'askmydocs',
+    name: 'AskMyDocs',
+    tagline: 'Featured Project',
+    description:
+      'An AI document assistant: upload PDFs and ask questions about them, with every answer grounded in the document and cited by page. Built as a retrieval-augmented generation (RAG) pipeline — queued workers extract the text, split it into chunks, and store OpenAI embeddings in PostgreSQL with pgvector; each question retrieves the most relevant passages with an exact per-document vector search, and the model answers through Structured Outputs, citing only the passages it was given (or saying the answer is not in the document). Clicking a citation opens the PDF at that page with the quoted text highlighted. Document text is treated as untrusted input to resist prompt injection, and per-user rate limits and daily question budgets cap the AI costs. Built with a Laravel API and a Vue/Vuetify SPA using Sanctum\'s cookie-based auth; production Docker images are built and published by GitHub Actions, and the stack runs next to PulseBoard on the same server behind its Caddy, with memory limits per container.',
+    tech: ['Vue.js', 'Vuetify', 'TypeScript', 'Laravel', 'PostgreSQL', 'pgvector', 'OpenAI API', 'Docker', 'Caddy'],
+    links: [
+      { label: 'Backend', url: 'https://github.com/nadimelchammaii-hash/askmydocs-backend', icon: 'mdi-github' },
+      { label: 'Frontend', url: 'https://github.com/nadimelchammaii-hash/askmydocs-frontend', icon: 'mdi-github' },
+      { label: 'Live Demo', url: 'https://askmydocs.org', icon: 'mdi-open-in-new' },
+    ],
+    variant: 'featured',
+    icon: 'mdi-file-search-outline',
+    visualTag: '$ ask --cite "What does page 12 say?"',
+  },
+  {
     id: 'trackmywallet',
     slug: 'trackmywallet',
     name: 'TrackMyWallet',
