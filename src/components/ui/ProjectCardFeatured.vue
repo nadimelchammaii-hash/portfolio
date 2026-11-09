@@ -1,77 +1,87 @@
 <template>
   <article class="project-card">
-    <div class="project-visual">
+    <a
+      :aria-label="`Open the ${project.name} live demo in a new tab`"
+      class="project-visual"
+      :href="project.demoUrl"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
       <img
         :alt="project.screenshotAlt"
         class="project-screenshot"
         loading="lazy"
         :src="project.screenshot"
       >
-    </div>
+    </a>
 
     <div class="project-content">
-      <p class="project-eyebrow font-mono text-primary">{{ project.tagline }}</p>
-      <h3 class="project-title">{{ project.name }}</h3>
-      <p class="project-outcome text-medium-emphasis">{{ project.outcome }}</p>
+      <div class="project-content-primary">
+        <p class="project-eyebrow font-mono text-primary">{{ project.tagline }}</p>
+        <h3 class="project-title">{{ project.name }}</h3>
+        <p class="project-outcome text-medium-emphasis">{{ project.outcome }}</p>
 
-      <ul class="project-bullets">
-        <li v-for="bullet in project.bullets" :key="bullet">
-          <v-icon color="primary" icon="mdi-check" size="16" />
-          <span>{{ bullet }}</span>
-        </li>
-      </ul>
-
-      <p class="project-tech-line font-mono text-medium-emphasis">{{ project.tech.join(' · ') }}</p>
-
-      <div class="project-actions">
-        <div class="d-flex flex-wrap align-center ga-3">
-          <v-btn
-            color="primaryContainer"
-            :href="project.demoUrl"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Try the live demo
-            <v-icon end icon="mdi-open-in-new" />
-          </v-btn>
-
-          <span class="project-no-signup font-mono text-medium-emphasis">No sign-up needed</span>
-        </div>
-
-        <div class="d-flex flex-wrap ga-4 mt-3">
-          <a
-            v-for="link in project.links"
-            :key="link.label"
-            class="project-link font-mono"
-            :href="link.url"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <v-icon :icon="link.icon" size="18" />
-            {{ link.label }}
-          </a>
-        </div>
+        <ul class="project-bullets">
+          <li v-for="bullet in project.bullets" :key="bullet">
+            <v-icon color="primary" icon="mdi-check" size="16" />
+            <span>{{ bullet }}</span>
+          </li>
+        </ul>
       </div>
 
-      <v-expansion-panels class="project-details" variant="accordion">
-        <v-expansion-panel bg-color="surfaceContainer">
-          <v-expansion-panel-title class="font-mono project-details-title">
-            Technical details
-          </v-expansion-panel-title>
+      <div class="project-content-secondary">
+        <p class="project-tech-line font-mono text-medium-emphasis">{{ project.tech.join(' · ') }}</p>
 
-          <v-expansion-panel-text class="project-details-text text-medium-emphasis">
-            <p>{{ project.description }}</p>
-
-            <img
-              v-if="project.extraScreenshot"
-              :alt="project.extraScreenshotAlt"
-              class="project-extra-screenshot"
-              loading="lazy"
-              :src="project.extraScreenshot"
+        <div class="project-actions">
+          <div class="d-flex flex-wrap align-center ga-3">
+            <v-btn
+              color="primaryContainer"
+              :href="project.demoUrl"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-          </v-expansion-panel-text>
-        </v-expansion-panel>
-      </v-expansion-panels>
+              Try the live demo
+              <v-icon end icon="mdi-open-in-new" />
+            </v-btn>
+
+            <span class="project-no-signup font-mono text-medium-emphasis">No sign-up needed</span>
+          </div>
+
+          <div class="d-flex flex-wrap ga-4 mt-3">
+            <a
+              v-for="link in project.links"
+              :key="link.label"
+              class="project-link font-mono"
+              :href="link.url"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <v-icon :icon="link.icon" size="18" />
+              {{ link.label }}
+            </a>
+          </div>
+        </div>
+
+        <v-expansion-panels class="project-details" variant="accordion">
+          <v-expansion-panel bg-color="surfaceContainer">
+            <v-expansion-panel-title class="font-mono project-details-title">
+              Technical details
+            </v-expansion-panel-title>
+
+            <v-expansion-panel-text class="project-details-text text-medium-emphasis">
+              <p>{{ project.description }}</p>
+
+              <img
+                v-if="project.extraScreenshot"
+                :alt="project.extraScreenshotAlt"
+                class="project-extra-screenshot"
+                loading="lazy"
+                :src="project.extraScreenshot"
+              >
+            </v-expansion-panel-text>
+          </v-expansion-panel>
+        </v-expansion-panels>
+      </div>
     </div>
   </article>
 </template>
@@ -99,14 +109,8 @@
   border-color: rgb(var(--v-theme-primary));
 }
 
-@media (min-width: 960px) {
-  .project-card {
-    flex-direction: row;
-  }
-}
-
 .project-visual {
-  flex: 0 0 auto;
+  display: block;
   aspect-ratio: 16 / 10;
   background-color: rgb(var(--v-theme-surface));
   border-bottom: 1px solid rgba(var(--v-theme-outlineVariant), 0.3);
@@ -115,23 +119,25 @@
 .project-screenshot {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: left top;
+  object-fit: cover;
   display: block;
-}
-
-@media (min-width: 960px) {
-  .project-visual {
-    flex: 0 0 42%;
-    border-bottom: none;
-    border-right: 1px solid rgba(var(--v-theme-outlineVariant), 0.3);
-  }
 }
 
 .project-content {
   padding: 32px;
-  flex: 1;
-  min-width: 0;
+}
+
+/* Two columns at desktop width: left is the pitch (title, outcome,
+   bullets), right is the proof and follow-through (tech, CTA, links,
+   technical details). Below 960px these two divs just stack in DOM
+   order, which is already the original single-column mobile layout. */
+@media (min-width: 960px) {
+  .project-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 40px;
+  }
 }
 
 .project-eyebrow {
