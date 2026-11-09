@@ -43,7 +43,19 @@
     }
   }
 
-  // Small pulsing status dot, reused by the "Currently Exploring" header.
+  // Pill badge used in both the Hero and the Contact section to flag
+  // freelance availability — shared here rather than duplicated per
+  // component, same as .pulse-dot and .grid-bg below.
+  .availability-badge {
+    display: inline-flex;
+    padding: 6px 14px;
+    font-size: 0.8125rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(var(--v-theme-outlineVariant), 0.5);
+    background-color: rgb(var(--v-theme-surfaceContainer));
+  }
+
+  // Small pulsing status dot, reused by the availability badge above.
   .pulse-dot {
     width: 8px;
     height: 8px;

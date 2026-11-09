@@ -1,6 +1,6 @@
 <template>
   <section id="projects" class="app-container section-spacing">
-    <SectionHeading index="05" title="Featured Works" />
+    <SectionHeading index="01" title="Featured Works" />
 
     <div class="projects-list">
       <!--

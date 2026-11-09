@@ -11,7 +11,7 @@
 
       <v-spacer />
 
-      <nav v-if="!mobile" aria-label="Primary" class="d-flex align-center ga-6 mr-6">
+      <nav v-if="lgAndUp" aria-label="Primary" class="d-flex align-center ga-5 mr-6">
         <a
           v-for="item in navItems"
           :key="item.href"
@@ -30,7 +30,7 @@
       </v-btn>
 
       <v-btn
-        v-if="!mobile"
+        v-if="lgAndUp"
         aria-label="GitHub profile"
         :href="profile.githubUrl"
         icon
@@ -42,7 +42,7 @@
       </v-btn>
 
       <v-btn
-        v-if="!mobile"
+        v-if="lgAndUp"
         class="ml-2 font-mono"
         color="primaryContainer"
         href="#contact"
@@ -51,7 +51,7 @@
       </v-btn>
 
       <v-btn
-        v-if="mobile"
+        v-if="!lgAndUp"
         aria-label="Open menu"
         icon
         variant="text"
@@ -92,16 +92,22 @@
   import { useAppTheme } from '@/composables/useAppTheme'
   import { profile } from '@/data/profile'
 
-  const { mobile } = useDisplay()
+  // The 7-item nav no longer fits in the header below `lg` (1145px), unlike
+  // the old 5-item version — so the header's own "desktop" cutoff is now
+  // wider than Vuetify's global `mobile` flag (840px), which other
+  // components (e.g. HeroVisual) still use unchanged.
+  const { lgAndUp } = useDisplay()
   const { isDark, toggleTheme } = useAppTheme()
 
   const drawer = ref(false)
 
   const navItems = [
-    { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Services', href: '#services' },
+    { label: 'How I Work', href: '#how-i-work' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' },
   ]
 

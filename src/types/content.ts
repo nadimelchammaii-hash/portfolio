@@ -4,6 +4,7 @@ export interface Profile {
   heroHeadline: string
   heroHeadlineAccent: string
   heroSubtext: string
+  availabilityBadge: string
   aboutParagraphs: string[]
   email: string
   githubUrl: string
@@ -37,12 +38,6 @@ export interface EducationEntry {
   gpa?: string
 }
 
-export interface LearningItem {
-  id: string
-  title: string
-  description: string
-}
-
 export interface ProjectLink {
   label: string
   url: string
@@ -54,12 +49,32 @@ export interface Project {
   slug: string
   name: string
   tagline: string
+  /** One-sentence outcome shown above the feature bullets. */
+  outcome: string
+  /** 3 short feature bullets. */
+  bullets: string[]
+  /** Long technical paragraph, shown in the card's collapsible "Technical details". */
   description: string
   tech: string[]
+  /** Target for the card's prominent "Try the live demo" button. */
+  demoUrl: string
+  /** Secondary links (Backend / Frontend repos). */
   links: ProjectLink[]
   variant: 'featured' | 'compact'
-  /** mdi icon shown in the card's visual panel (no real screenshot exists). */
+  screenshot: string
+  screenshotAlt: string
+}
+
+export interface ServiceItem {
+  id: string
+  title: string
+  description: string
   icon: string
-  /** Terminal-style tag shown under the icon, e.g. `$ docker compose up`. */
-  visualTag: string
+}
+
+export interface ProcessStep {
+  id: string
+  step: number
+  title: string
+  description: string
 }

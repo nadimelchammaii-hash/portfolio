@@ -1,11 +1,16 @@
 <template>
   <section id="contact" class="app-container section-spacing contact-section">
-    <p class="font-mono text-primary contact-eyebrow">06. What's Next?</p>
-    <h2 class="contact-heading">Get In Touch</h2>
+    <p class="font-mono text-primary contact-eyebrow">08. What's Next?</p>
+    <h2 class="contact-heading">Have a project in mind?</h2>
 
     <p class="contact-intro text-medium-emphasis">
-      I'm always glad to talk about new opportunities, collaboration, or just swap notes on deployment and architecture.
+      Tell me what you need — I reply within 24 hours.
     </p>
+
+    <div class="availability-badge font-mono d-flex align-center ga-2 contact-badge">
+      <span class="pulse-dot" />
+      {{ profile.availabilityBadge }}
+    </div>
 
     <v-form ref="formRef" class="contact-form" @submit.prevent="handleSubmit">
       <div class="contact-field">
@@ -58,12 +63,67 @@
         Opens your email client with this pre-filled — nothing is sent from this page directly.
       </p>
     </v-form>
+
+    <div class="d-flex justify-center ga-2 contact-socials">
+      <v-btn
+        aria-label="GitHub profile"
+        :href="profile.githubUrl"
+        icon
+        rel="noopener noreferrer"
+        target="_blank"
+        variant="text"
+      >
+        <v-icon icon="mdi-github" />
+      </v-btn>
+
+      <v-btn
+        aria-label="LinkedIn profile"
+        :href="profile.linkedinUrl"
+        icon
+        rel="noopener noreferrer"
+        target="_blank"
+        variant="text"
+      >
+        <v-icon icon="mdi-linkedin" />
+      </v-btn>
+
+      <v-btn
+        :aria-label="`Email ${profile.email}`"
+        :href="`mailto:${profile.email}`"
+        icon
+        variant="text"
+      >
+        <v-icon icon="mdi-email-outline" />
+      </v-btn>
+
+      <v-btn
+        aria-label="Upwork profile"
+        :href="UPWORK_URL"
+        icon
+        rel="noopener noreferrer"
+        target="_blank"
+        variant="text"
+      >
+        <v-icon icon="mdi-briefcase-outline" />
+      </v-btn>
+
+      <v-btn
+        aria-label="WhatsApp"
+        :href="WHATSAPP_URL"
+        icon
+        rel="noopener noreferrer"
+        target="_blank"
+        variant="text"
+      >
+        <v-icon icon="mdi-whatsapp" />
+      </v-btn>
+    </div>
   </section>
 </template>
 
 <script lang="ts" setup>
   import { ref } from 'vue'
-  import { profile } from '@/data/profile'
+  import { profile, UPWORK_URL, WHATSAPP_URL } from '@/data/profile'
 
   const formRef = ref()
   const name = ref('')
@@ -117,6 +177,10 @@
 .contact-intro {
   font-size: 18px;
   line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.contact-badge {
   margin-bottom: 48px;
 }
 
@@ -143,5 +207,9 @@
   margin-top: 12px;
   font-size: 0.75rem;
   text-align: center;
+}
+
+.contact-socials {
+  margin-top: 32px;
 }
 </style>

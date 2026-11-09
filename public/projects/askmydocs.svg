@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#434655" stroke-opacity="0.15" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="960" height="600" fill="#171f33" />
+  <rect width="960" height="600" fill="url(#grid)" />
+
+  <g transform="translate(480, 250)">
+    <rect x="-70" y="-90" width="140" height="180" rx="8" fill="none" stroke="#b4c5ff" stroke-width="3" />
+    <line x1="-46" y1="-54" x2="46" y2="-54" stroke="#b4c5ff" stroke-width="3" stroke-linecap="round" />
+    <line x1="-46" y1="-28" x2="46" y2="-28" stroke="#b4c5ff" stroke-width="3" stroke-linecap="round" />
+    <line x1="-46" y1="-2" x2="20" y2="-2" stroke="#b4c5ff" stroke-width="3" stroke-linecap="round" />
+    <line x1="-46" y1="24" x2="46" y2="24" stroke="#434655" stroke-width="3" stroke-linecap="round" />
+    <line x1="-46" y1="50" x2="30" y2="50" stroke="#434655" stroke-width="3" stroke-linecap="round" />
+    <circle cx="58" cy="60" r="34" fill="#0b1326" stroke="#2563eb" stroke-width="5" />
+    <line x1="82" y1="84" x2="112" y2="114" stroke="#2563eb" stroke-width="7" stroke-linecap="round" />
+  </g>
+
+  <text x="480" y="420" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="28" font-weight="700" fill="#eeefff" text-anchor="middle">AskMyDocs</text>
+  <text x="480" y="452" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="15" fill="#c3c6d7" text-anchor="middle">Screenshot placeholder — swap for a real capture</text>
+</svg>

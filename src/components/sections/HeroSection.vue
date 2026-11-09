@@ -3,6 +3,11 @@
     <HeroVisual v-if="!mobile" />
 
     <div class="app-container hero-content">
+      <div class="availability-badge font-mono d-flex align-center ga-2">
+        <span class="pulse-dot" />
+        {{ profile.availabilityBadge }}
+      </div>
+
       <h1 class="hero-headline">
         {{ profile.heroHeadline }}
         <span class="hero-accent text-primary">{{ profile.heroHeadlineAccent }}</span>
@@ -14,22 +19,29 @@
 
       <div class="d-flex flex-wrap ga-4 mt-8">
         <v-btn color="primaryContainer" href="#projects" size="large">
-          View My Projects
+          See live projects
           <v-icon end icon="mdi-arrow-right" />
         </v-btn>
 
         <v-btn
           class="font-mono"
-          :href="profile.cvUrl"
+          :href="UPWORK_URL"
+          rel="noopener noreferrer"
           size="large"
+          target="_blank"
           variant="outlined"
         >
-          <v-icon icon="mdi-download" start />
-          Download CV
+          <v-icon icon="mdi-briefcase-outline" start />
+          Hire me on Upwork
         </v-btn>
       </div>
 
-      <div class="d-flex ga-2 mt-12 hero-socials">
+      <a class="hero-cv-link font-mono text-medium-emphasis" :href="profile.cvUrl">
+        <v-icon icon="mdi-download" size="16" />
+        Download CV
+      </a>
+
+      <div class="d-flex ga-2 mt-8 hero-socials">
         <v-btn
           aria-label="GitHub profile"
           :href="profile.githubUrl"
@@ -68,7 +80,7 @@
 <script lang="ts" setup>
   import { defineAsyncComponent } from 'vue'
   import { useDisplay } from 'vuetify'
-  import { profile } from '@/data/profile'
+  import { profile, UPWORK_URL } from '@/data/profile'
 
   // Three.js is a heavy dependency (~230KB gzipped) that only ever renders
   // on desktop (`v-if="!mobile"` below) — code-splitting it out of the main
@@ -89,6 +101,10 @@
 .hero-content {
   position: relative;
   z-index: 1;
+}
+
+.availability-badge {
+  margin-bottom: 24px;
 }
 
 /* Matches the Stitch "display-lg" type token: 40px/700/-0.02em on mobile,
@@ -122,5 +138,19 @@
   line-height: 1.6;
   max-width: 40rem;
   margin-top: 24px;
+}
+
+.hero-cv-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+  font-size: 0.8125rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.hero-cv-link:hover {
+  color: rgb(var(--v-theme-primary));
 }
 </style>

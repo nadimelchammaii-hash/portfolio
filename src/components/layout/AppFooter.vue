@@ -3,7 +3,7 @@
     <div class="app-container d-flex flex-column flex-md-row justify-space-between align-center ga-6 py-8">
       <span class="wordmark text-primary">NADIM.DEV</span>
 
-      <nav aria-label="Footer" class="d-flex flex-wrap flex-md-nowrap justify-center ga-6 font-mono text-body-2">
+      <nav aria-label="Footer" class="d-flex flex-wrap flex-xl-nowrap justify-center ga-6 font-mono text-body-2">
         <a
           v-for="item in navItems"
           :key="item.href"
@@ -63,10 +63,12 @@
 
   const navItems = [
     { label: 'Home', href: '#' },
-    { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Services', href: '#services' },
+    { label: 'How I Work', href: '#how-i-work' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' },
   ]
 </script>

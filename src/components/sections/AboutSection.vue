@@ -2,7 +2,7 @@
   <section id="about" class="app-container section-spacing">
     <div class="about-grid">
       <div class="about-label">
-        <SectionHeading index="01" title="Background" />
+        <SectionHeading index="06" title="Background" />
       </div>
 
       <div class="about-content">
@@ -15,12 +15,15 @@
         </p>
       </div>
     </div>
+
+    <EducationColumn class="about-education" />
   </section>
 </template>
 
 <script lang="ts" setup>
   import SectionHeading from '@/components/ui/SectionHeading.vue'
   import { profile } from '@/data/profile'
+  import EducationColumn from './EducationColumn.vue'
 </script>
 
 <style scoped>
@@ -39,12 +42,6 @@
 
   .about-label {
     flex: 0 0 33%;
-    /* Sticks the section label in view while the (currently short) content
-       column scrolls past it — a small detail from the source design that
-       will matter more once the surrounding sections give the page real
-       scroll length. */
-    position: sticky;
-    top: 96px;
   }
 
   .about-content {
@@ -59,5 +56,15 @@
 
 .about-paragraph + .about-paragraph {
   margin-top: 24px;
+}
+
+.about-education {
+  margin-top: 64px;
+}
+
+@media (min-width: 840px) {
+  .about-education {
+    margin-top: 96px;
+  }
 }
 </style>

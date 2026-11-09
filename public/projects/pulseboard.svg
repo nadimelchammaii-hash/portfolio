@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#434655" stroke-opacity="0.15" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="960" height="600" fill="#171f33" />
+  <rect width="960" height="600" fill="url(#grid)" />
+
+  <g transform="translate(480, 250)">
+    <rect x="-150" y="-90" width="90" height="180" rx="6" fill="none" stroke="#434655" stroke-width="3" />
+    <rect x="-138" y="-72" width="66" height="30" rx="4" fill="#0b1326" stroke="#b4c5ff" stroke-width="2" />
+    <rect x="-138" y="-32" width="66" height="30" rx="4" fill="#0b1326" stroke="#b4c5ff" stroke-width="2" />
+
+    <rect x="-45" y="-90" width="90" height="180" rx="6" fill="none" stroke="#2563eb" stroke-width="3" />
+    <rect x="-33" y="-72" width="66" height="30" rx="4" fill="#0b1326" stroke="#2563eb" stroke-width="2" />
+    <rect x="-33" y="-32" width="66" height="30" rx="4" fill="#0b1326" stroke="#2563eb" stroke-width="2" />
+    <rect x="-33" y="8" width="66" height="30" rx="4" fill="#0b1326" stroke="#2563eb" stroke-width="2" />
+
+    <rect x="60" y="-90" width="90" height="180" rx="6" fill="none" stroke="#434655" stroke-width="3" />
+    <rect x="72" y="-72" width="66" height="30" rx="4" fill="#0b1326" stroke="#b4c5ff" stroke-width="2" />
+  </g>
+
+  <text x="480" y="420" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="28" font-weight="700" fill="#eeefff" text-anchor="middle">PulseBoard</text>
+  <text x="480" y="452" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="15" fill="#c3c6d7" text-anchor="middle">Screenshot placeholder — swap for a real capture</text>
+</svg>

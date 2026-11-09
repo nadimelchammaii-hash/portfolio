@@ -2,7 +2,7 @@
   <section id="skills" class="app-container section-spacing">
     <div class="skills-grid">
       <div class="skills-label">
-        <SectionHeading index="02" title="Technical Arsenal" />
+        <SectionHeading index="05" title="Technical Arsenal" />
 
         <p class="skills-description text-medium-emphasis">
           The technologies I use most, across the frontend, backend, and infrastructure of the applications I build.
