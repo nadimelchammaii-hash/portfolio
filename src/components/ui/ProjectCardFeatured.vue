@@ -115,14 +115,14 @@
 .project-screenshot {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: left top;
   display: block;
 }
 
 @media (min-width: 960px) {
   .project-visual {
     flex: 0 0 42%;
-    aspect-ratio: auto;
     border-bottom: none;
     border-right: 1px solid rgba(var(--v-theme-outlineVariant), 0.3);
   }

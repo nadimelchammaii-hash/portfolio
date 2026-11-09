@@ -72,8 +72,8 @@ export const projects: Project[] = [
     ],
     variant: 'featured',
     screenshot: '/projects/trackmywallet.webp',
-    screenshotAlt: 'TrackMyWallet dashboard showing account balances and a spending breakdown chart',
+    screenshotAlt: 'TrackMyWallet reports page with an income vs. expenses chart, spending by category, and budget vs. actual',
     extraScreenshot: '/projects/secondary/trackmywallet.webp',
-    extraScreenshotAlt: 'TrackMyWallet reports page with an income vs. expenses chart, spending by category, and budget vs. actual',
+    extraScreenshotAlt: 'TrackMyWallet dashboard showing account balance, income, expenses, savings, recent transactions and goal progress',
   },
 ]

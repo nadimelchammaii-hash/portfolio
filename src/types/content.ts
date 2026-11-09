@@ -72,6 +72,8 @@ export interface ServiceItem {
   id: string
   title: string
   description: string
+  /** Short line on what you actually get, shown under the description. */
+  deliverable: string
   icon: string
 }
 

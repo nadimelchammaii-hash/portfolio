@@ -1,5 +1,5 @@
 <template>
-  <section id="services" class="app-container section-spacing">
+  <section id="services" class="app-container section-spacing services-section">
     <SectionHeading index="02" title="Services" />
 
     <div class="services-grid">
@@ -15,6 +15,18 @@
 </script>
 
 <style scoped>
+/* Services and How I Work (src/components/sections/HowIWorkSection.vue) are
+   both single-row, short-content sections — the shared .section-spacing
+   padding is identical to every other section boundary, but with so little
+   content on either side of this particular seam it reads as a much bigger
+   gap than the same padding does elsewhere. Tightened locally, rather than
+   changing .section-spacing itself and affecting every other section. */
+@media (min-width: 840px) {
+  .services-section {
+    padding-bottom: 64px;
+  }
+}
+
 .services-grid {
   margin-top: 48px;
   display: grid;

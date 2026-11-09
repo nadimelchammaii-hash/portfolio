@@ -3,6 +3,7 @@
     <v-icon color="primary" :icon="service.icon" size="32" />
     <h3 class="service-title">{{ service.title }}</h3>
     <p class="service-description text-medium-emphasis">{{ service.description }}</p>
+    <p class="service-deliverable font-mono text-medium-emphasis">{{ service.deliverable }}</p>
   </v-card>
 </template>
 
@@ -38,5 +39,11 @@
 .service-description {
   font-size: 0.9375rem;
   line-height: 1.5;
+}
+
+.service-deliverable {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin-top: 12px;
 }
 </style>

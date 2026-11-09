@@ -1,5 +1,5 @@
 <template>
-  <section id="how-i-work" class="app-container section-spacing">
+  <section id="how-i-work" class="app-container section-spacing how-i-work-section">
     <SectionHeading index="03" title="How I Work" />
 
     <div class="process-steps">
@@ -15,6 +15,14 @@
 </script>
 
 <style scoped>
+/* Tightens only the seam shared with Services (see its matching comment) —
+   the bottom padding here, going into Experience, is untouched. */
+@media (min-width: 840px) {
+  .how-i-work-section {
+    padding-top: 64px;
+  }
+}
+
 .process-steps {
   margin-top: 48px;
   display: grid;
