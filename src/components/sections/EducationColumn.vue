@@ -5,7 +5,7 @@
     <EducationCard v-for="entry in educationEntries" :key="entry.id" class="education-column-card" :entry="entry" />
 
     <div class="education-languages">
-      <SkillChip v-for="lang in languages" :key="lang.name" :label="`${lang.name} — ${lang.level}`" />
+      <SkillChip v-for="lang in languages" :key="lang.name" :label="`${lang.name} · ${lang.level}`" />
     </div>
   </div>
 </template>

@@ -19,5 +19,5 @@
   </g>
 
   <text x="480" y="420" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="28" font-weight="700" fill="#eeefff" text-anchor="middle">AskMyDocs</text>
-  <text x="480" y="452" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="15" fill="#c3c6d7" text-anchor="middle">Screenshot placeholder — swap for a real capture</text>
+  <text x="480" y="452" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="15" fill="#c3c6d7" text-anchor="middle">Screenshot placeholder, swap for a real capture</text>
 </svg>

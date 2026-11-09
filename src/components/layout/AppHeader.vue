@@ -7,7 +7,7 @@
     scroll-behavior="elevate"
   >
     <div class="app-container d-flex align-center h-100">
-      <a aria-label="Nadim El Chammaii — home" class="wordmark text-primary" href="#">NADIM.DEV</a>
+      <a aria-label="Nadim El Chammaii, home" class="wordmark text-primary" href="#">NADIM.DEV</a>
 
       <v-spacer />
 

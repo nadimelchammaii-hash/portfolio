@@ -5,7 +5,7 @@ export const processSteps: ProcessStep[] = [
     id: 'discuss',
     step: 1,
     title: 'Discuss your goal',
-    description: 'We talk through what you need and whether I\'m the right fit — no cost, no pressure.',
+    description: 'We talk through what you need and whether I\'m the right fit. No cost, no pressure.',
   },
   {
     id: 'plan',
@@ -23,6 +23,6 @@ export const processSteps: ProcessStep[] = [
     id: 'deploy',
     step: 4,
     title: 'Deploy & hand over',
-    description: 'I deploy it myself — Docker, HTTPS, the real thing — and hand over everything you need to maintain it.',
+    description: 'I deploy it myself: Docker, HTTPS, the real thing, and hand over everything you need to maintain it.',
   },
 ]

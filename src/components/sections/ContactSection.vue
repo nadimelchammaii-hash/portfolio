@@ -4,7 +4,7 @@
     <h2 class="contact-heading">Have a project in mind?</h2>
 
     <p class="contact-intro text-medium-emphasis">
-      Tell me what you need — I reply within 24 hours.
+      Tell me what you need. I reply within 24 hours.
     </p>
 
     <div class="availability-badge font-mono d-flex align-center ga-2 contact-badge">
@@ -60,7 +60,7 @@
       </v-btn>
 
       <p class="contact-form-note font-mono text-medium-emphasis">
-        Opens your email client with this pre-filled — nothing is sent from this page directly.
+        Opens your email client with this pre-filled. Nothing is sent from this page directly.
       </p>
     </v-form>
 
@@ -106,24 +106,13 @@
       >
         <v-icon icon="mdi-briefcase-outline" />
       </v-btn>
-
-      <v-btn
-        aria-label="WhatsApp"
-        :href="WHATSAPP_URL"
-        icon
-        rel="noopener noreferrer"
-        target="_blank"
-        variant="text"
-      >
-        <v-icon icon="mdi-whatsapp" />
-      </v-btn>
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
   import { ref } from 'vue'
-  import { profile, UPWORK_URL, WHATSAPP_URL } from '@/data/profile'
+  import { profile, UPWORK_URL } from '@/data/profile'
 
   const formRef = ref()
   const name = ref('')
@@ -142,7 +131,7 @@
     if (!valid) return
 
     const subject = encodeURIComponent(`Portfolio contact from ${name.value}`)
-    const body = encodeURIComponent(`${message.value}\n\n— ${name.value} (${email.value})`)
+    const body = encodeURIComponent(`${message.value}\n\n${name.value} (${email.value})`)
     window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`
   }
 </script>
