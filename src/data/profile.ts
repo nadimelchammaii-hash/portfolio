@@ -20,5 +20,4 @@ export const profile: Profile = {
   cvUrl: '/cv.pdf',
 }
 
-// TODO(nadim): replace with your real Upwork profile URL.
-export const UPWORK_URL = 'https://www.upwork.com/freelancers/~PLACEHOLDER'
+export const UPWORK_URL = 'https://www.upwork.com/freelancers/~01c1a4163effd63221?mp_source=share'

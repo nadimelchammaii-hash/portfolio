@@ -63,6 +63,9 @@ export interface Project {
   variant: 'featured' | 'compact'
   screenshot: string
   screenshotAlt: string
+  /** Extra screenshot shown inside "Technical details", alongside the long description. */
+  extraScreenshot?: string
+  extraScreenshotAlt?: string
 }
 
 export interface ServiceItem {

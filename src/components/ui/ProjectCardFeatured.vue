@@ -60,7 +60,15 @@
           </v-expansion-panel-title>
 
           <v-expansion-panel-text class="project-details-text text-medium-emphasis">
-            {{ project.description }}
+            <p>{{ project.description }}</p>
+
+            <img
+              v-if="project.extraScreenshot"
+              :alt="project.extraScreenshotAlt"
+              class="project-extra-screenshot"
+              loading="lazy"
+              :src="project.extraScreenshot"
+            >
           </v-expansion-panel-text>
         </v-expansion-panel>
       </v-expansion-panels>
@@ -209,5 +217,13 @@
 .project-details-text {
   font-size: 0.9375rem;
   line-height: 1.6;
+}
+
+.project-extra-screenshot {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(var(--v-theme-outlineVariant), 0.3);
 }
 </style>
